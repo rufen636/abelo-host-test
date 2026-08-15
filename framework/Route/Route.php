@@ -17,6 +17,8 @@ class Route
 
     public static function dispatch($method, $uri)
     {
+        $matched = false;
+
         foreach (self::$routes as $route) {
             if ($route['method'] !== $method) {
                 continue;
@@ -26,6 +28,7 @@ class Route
             $params = [];
 
             if (preg_match($pattern, $uri, $params)) {
+                $matched = true;
                 $callback = $route['handler'];
 
                 if (is_array($callback)) {
@@ -48,6 +51,11 @@ class Route
 
                 echo call_user_func_array($callback, $args);
             }
+        }
+
+        if (!$matched) {
+            http_response_code(404);
+            echo '<div style="display:flex;justify-content: center;align-items: center;width: 100%;height: 100%">'.'404 — Page not found' . '</div>';
         }
     }
 
