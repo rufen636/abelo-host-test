@@ -55,7 +55,15 @@ class Route
 
         if (!$matched) {
             http_response_code(404);
-            echo '<div style="display:flex;justify-content: center;align-items: center;width: 100%;height: 100%">'.'404 — Page not found' . '</div>';
+
+            $smartyDir = dirname(__DIR__, 2) . '/public/smarty/templates';
+            if (is_dir($smartyDir)) {
+                require_once dirname(__DIR__, 2) . '/app/Http/Controllers/BaseController.php';
+                \App\Http\Controllers\BaseController::initSmarty();
+                \App\Http\Controllers\BaseController::$smarty->display('404.tpl');
+            } else {
+                echo '404 — Page not found';
+            }
         }
     }
 
