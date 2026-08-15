@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS articles
     title VARCHAR(255) NOT NULL,
     description TEXT NULL,
     content LONGTEXT NOT NULL,
+    published_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     views INT DEFAULT 0
 );
 
