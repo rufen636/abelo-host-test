@@ -47,7 +47,7 @@ class Connection
         }
         }
 
-    public function getInstance(): Connection
+    public static function getInstance(): Connection
     {
         if (self::$instance == null){
             self::$instance = new Connection();

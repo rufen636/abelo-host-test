@@ -4,6 +4,6 @@
 
 {block name=content}
     <div class="container">
-        <h1>Hello, {$name}!</h1>
+        <div id="categoriesContainer"></div>
     </div>
 {/block}
