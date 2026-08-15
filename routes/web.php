@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 
 //web
 Route::get('/',  [HomeController::class, 'index']);
+Route::get('/category/{id}', [CategoryController::class, 'index']);
 
 //api
 Route::get('/api/categories-with-posts',[CategoryController::class, 'categoriesWithPosts']);
