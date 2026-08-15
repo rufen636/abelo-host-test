@@ -14,9 +14,7 @@
         <nav>
             <a href="/" class="logo">Test</a>
             <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/categories">Categories</a></li>
-                <li><a href="/articles">Articles</a></li>
+                <li><a href="/">Главная</a></li>
             </ul>
         </nav>
     </header>
