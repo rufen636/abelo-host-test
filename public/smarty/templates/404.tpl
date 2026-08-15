@@ -1,0 +1,1 @@
+<div style="display:flex;justify-content: center;align-items: center;width: 100%;height: 100%">404 — Page not found</div>
